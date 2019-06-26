@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
-  Toolbar, AppBar, Menu, IconButton, MenuItem, Typography,
+  Toolbar, AppBar, Menu, IconButton, MenuItem,
+  Typography,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,17 +34,20 @@ function TopMenu() {
   const classes = useStyles()
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const handleButtonClick = (e)=>{
+    setMenuOpen(!menuOpen);
+    setAnchorEl(e.currentTarget);
+  }
+  const handleItemClick = () => {
+    setMenuOpen(false)
+  }
   return (
     <>
       <AppBar position='sticky' className={classes.appBar}>
         <Toolbar>
           <IconButton
             className={classes.menuButton}
-            onClick={(e)=>{
-              setMenuOpen(!menuOpen);
-              setAnchorEl(e.currentTarget);
-            }}
+            onClick={handleButtonClick}
             aria-controls='menu-open'
           >
             <MenuIcon className={classes.menuButtonIcon}/>
@@ -59,11 +63,11 @@ function TopMenu() {
           PaperProps={{className: classes.menuPaper}}
           elevation={6}
         >
-          <MenuItem>New Game</MenuItem>
-          <MenuItem>Restart This Game</MenuItem>
-          <MenuItem>Draw 1 Card</MenuItem>
-          <MenuItem>Draw 3 Cards</MenuItem>
-          <MenuItem>Top Scores</MenuItem>
+          <MenuItem onClick={handleItemClick} >New Game</MenuItem>
+          <MenuItem onClick={handleItemClick} >Restart This Game</MenuItem>
+          <MenuItem onClick={handleItemClick} >Draw 1 Card</MenuItem>
+          <MenuItem onClick={handleItemClick} >Draw 3 Cards</MenuItem>
+          <MenuItem onClick={handleItemClick} >Top Scores</MenuItem>
         </Menu>
       </AppBar>
     </>
