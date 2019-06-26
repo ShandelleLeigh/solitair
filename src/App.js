@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 
 import { ThemeProvider } from '@material-ui/styles';
-import TopMenu from './TopMenu';
-import PaperGameTable from './PaperGameTable'
+import TopMenu from './components/TopMenu';
+import PaperGameTable from './components/PaperGameTable'
 import theme from './styles';
 
 
