@@ -1,4 +1,4 @@
-Solitair Project exercise
+Solitaire Project exercise
 
 Built with React.js, Material-UI
 

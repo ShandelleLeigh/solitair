@@ -22,15 +22,22 @@ const numbers = [
 ]
 
 
-function getCompleteDeck() {
-  const orderedDeck = {};
-  for each (var suit in s) {
-
-  }
+export function getCompleteDeck() {
+  const orderedDeck = [];
+  let cardNumber = 1
+  suits.forEach( s => {
+    numbers.forEach( n => {
+      let card = {
+        cardNo: cardNumber, name: n.name, value: n.val, suit: s.suit, color: s.color
+      }
+      orderedDeck.push(card)
+      cardNumber ++
+    })
+  })
   return orderedDeck
 }
 
-function getShuffledDeck(deck) {
+export function getShuffledDeck(deck) {
   let shuffledDeck = {};
   shuffledDeck = {...deck}
   return shuffledDeck

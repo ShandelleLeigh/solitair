@@ -52,7 +52,7 @@ function TopMenu() {
           >
             <MenuIcon className={classes.menuButtonIcon}/>
           </IconButton>
-          <Typography>Solitair</Typography>
+          <Typography>Solitaire</Typography>
         </Toolbar>
         <Menu
           open={menuOpen}
