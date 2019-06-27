@@ -28,7 +28,11 @@ export function getCompleteDeck() {
   suits.forEach( s => {
     numbers.forEach( n => {
       let card = {
-        cardNo: cardNumber, name: n.name, value: n.val, suit: s.suit, color: s.color
+        cardNo: cardNumber,
+        name: n.name,
+        value: n.val,
+        suit: s.suit,
+        color: s.color,
       }
       orderedDeck.push(card)
       cardNumber ++

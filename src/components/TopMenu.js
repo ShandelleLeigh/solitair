@@ -5,7 +5,6 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import {getCompleteDeck} from './cards/makeDeck';
 
 const useStyles = makeStyles(
   theme => ({
@@ -31,11 +30,10 @@ const useStyles = makeStyles(
   })
 );
 
-function TopMenu() {
+function TopMenu({startNewGame}) {
   const classes = useStyles()
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [CardDeck, setCardDeck] = useState({});
   const handleButtonClick = (e)=>{
     setMenuOpen(!menuOpen);
     setAnchorEl(e.currentTarget);
@@ -45,8 +43,7 @@ function TopMenu() {
   }
   const handleNewGame = () => {
     handleItemClick()
-    setCardDeck(getCompleteDeck())
-
+    startNewGame()
   }
 
   return (
