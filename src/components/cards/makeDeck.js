@@ -1,3 +1,5 @@
+import shuffle from './../helpers/shuffle';
+
 const suits = [
   { suit: 'Diamonds', color: 'black' },
   { suit: 'Spades',   color: 'black' },
@@ -38,11 +40,7 @@ export function getCompleteDeck() {
       cardNumber ++
     })
   })
-  return orderedDeck
-}
 
-export function getShuffledDeck(deck) {
-  let shuffledDeck = {};
-  shuffledDeck = {...deck}
+  let shuffledDeck = shuffle([...orderedDeck]);
   return shuffledDeck
 }
